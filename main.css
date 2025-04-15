@@ -1,14 +1,80 @@
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-image: url("https://i.imgur.com/1vG1rE9.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.9;
-    z-index: -1;
+:root {
+  --primary-color: #000000;
+  --secondary-color: #FFFFFF;
+  --accent-color: #000000;
+  --background-color: #FFFFFF;
+  --text-color: #000000;
+  --border-color: #000000;
+  --hover-color: #000000;
+  --disabled-color: #CCCCCC;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+a {
+  color: var(--primary-color);
+}
+
+a:hover {
+  color: var(--hover-color);
+}
+
+button {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: 1px solid var(--border-color);
+}
+
+button:hover {
+  background-color: var(--hover-color);
+  color: var(--secondary-color);
+}
+
+input, textarea {
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  background-color: var(--secondary-color);
+}
+
+input:disabled, textarea:disabled {
+  background-color: var(--disabled-color);
+  color: #666666;
+}
+
+header, footer, nav {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.card {
+  background-color: var(--secondary-color);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+}
+
+.card:hover {
+  border-color: var(--hover-color);
+}
+
+hr {
+  border-color: var(--border-color);
+}
+
+.alert {
+  background-color: #F2F2F2;
+  color: #000000;
+  border-left: 5px solid #000000;
+}
+
+.success {
+  background-color: #DDDDDD;
+  border-left: 5px solid #000000;
+}
+
+.error {
+  background-color: #EEEEEE;
+  border-left: 5px solid #000000;
 }
