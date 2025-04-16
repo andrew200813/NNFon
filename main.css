@@ -1,80 +1,45 @@
+/* Модифицированная версия ClearVision с кастомным фоном */
+
+@import url("https://clearvision.github.io/ClearVision-v7/main.css");
+
 :root {
-  --primary-color: #000000;
-  --secondary-color: #FFFFFF;
-  --accent-color: #000000;
-  --background-color: #FFFFFF;
-  --text-color: #000000;
-  --border-color: #000000;
-  --hover-color: #000000;
-  --disabled-color: #CCCCCC;
+  --background-image: url("https://i.imgur.com/1vG1rE9.png");
+  --background-attachment: fixed;
+  --background-filter: none;
+  --hsl-main-color: 276 100% 65%; /* Неоновый фиолетовый */
+  --background-shading-percent: 0.0;
+  --hsl-background-shading: 0 0% 0%; /* чёрный */
+  --hsl-card-shading: hsl(276 100% 7%);
+  --hsl-card-shading-inverted: hsl(276 100% 12%);
+  --hsl-popout-shading: hsl(276 100% 10%);
+  --hsl-hover-color: hsl(276 100% 75%);
+  --hsl-input-border-shading: hsl(276 100% 40%);
+  --hsl-success-color: hsl(140 100% 50%);
+  --hsl-danger-color: hsl(0 100% 60%);
+  --hsl-streaming-color: hsl(260 100% 60%);
 }
 
-body {
-  background-color: var(--background-color);
-  color: var(--text-color);
+/* Обводка и неон */
+.visual-refresh .container__87bf1,
+.visual-refresh .container__9a337,
+.visual-refresh .chatContent_f75fb0,
+.visual-refresh .chat_f75fb0,
+.visual-refresh .wrapper_fc8177 {
+    border: 2px solid hsl(var(--hsl-main-color));
+    box-shadow: 0 0 10px hsl(var(--hsl-main-color));
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.4) !important;
+    backdrop-filter: blur(8px);
 }
 
-a {
-  color: var(--primary-color);
+/* Прозрачный фон на body и app */
+body, .appMount__51fd7, .app__160d8 {
+    background: transparent !important;
 }
 
-a:hover {
-  color: var(--hover-color);
-}
-
-button {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
-  border: 1px solid var(--border-color);
-}
-
-button:hover {
-  background-color: var(--hover-color);
-  color: var(--secondary-color);
-}
-
-input, textarea {
-  border: 1px solid var(--border-color);
-  color: var(--text-color);
-  background-color: var(--secondary-color);
-}
-
-input:disabled, textarea:disabled {
-  background-color: var(--disabled-color);
-  color: #666666;
-}
-
-header, footer, nav {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
-}
-
-.card {
-  background-color: var(--secondary-color);
-  border: 1px solid var(--border-color);
-  color: var(--text-color);
-}
-
-.card:hover {
-  border-color: var(--hover-color);
-}
-
-hr {
-  border-color: var(--border-color);
-}
-
-.alert {
-  background-color: #F2F2F2;
-  color: #000000;
-  border-left: 5px solid #000000;
-}
-
-.success {
-  background-color: #DDDDDD;
-  border-left: 5px solid #000000;
-}
-
-.error {
-  background-color: #EEEEEE;
-  border-left: 5px solid #000000;
+/* Отключаем надпись ClearVision */
+.info__2debe::after,
+.platform-win .leading_c38106::before,
+.platform-win .leading_c38106::after {
+    display: none !important;
 }
