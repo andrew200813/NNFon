@@ -1,4 +1,4 @@
-/* Модифицированная версия ClearVision с кастомным фоном */
+/* Модифицированная версия ClearVision с кастомным фоном и неоновой обводкой */
 
 @import url("https://clearvision.github.io/ClearVision-v7/main.css");
 
@@ -8,7 +8,7 @@
   --background-filter: none;
   --hsl-main-color: 276 100% 65%; /* Неоновый фиолетовый */
   --background-shading-percent: 0.0;
-  --hsl-background-shading: 0 0% 0%; /* чёрный */
+  --hsl-background-shading: 0 0% 0%;
   --hsl-card-shading: hsl(276 100% 7%);
   --hsl-card-shading-inverted: hsl(276 100% 12%);
   --hsl-popout-shading: hsl(276 100% 10%);
@@ -19,17 +19,22 @@
   --hsl-streaming-color: hsl(260 100% 60%);
 }
 
-/* Обводка и неон */
-.visual-refresh .container__87bf1,
-.visual-refresh .container__9a337,
-.visual-refresh .chatContent_f75fb0,
-.visual-refresh .chat_f75fb0,
-.visual-refresh .wrapper_fc8177 {
-    border: 2px solid hsl(var(--hsl-main-color));
-    box-shadow: 0 0 10px hsl(var(--hsl-main-color));
+/* НЕОНОВАЯ ОБВОДКА ВОКРУГ ИНТЕРФЕЙСА */
+[class*="container-"],
+[class*="sidebar-"],
+[class*="chatContent-"],
+[class*="membersWrap-"],
+[class*="content-"],
+[class*="nowPlayingColumn-"],
+[class*="layers-"],
+[class*="layer-"],
+[class*="appMount-"],
+[class*="app-"] {
+    border: 2px solid rgba(184, 79, 255, 0.7);
+    box-shadow: 0 0 10px rgba(184, 79, 255, 0.8);
     border-radius: 10px;
-    background: rgba(0, 0, 0, 0.4) !important;
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(6px);
+    background: rgba(0, 0, 0, 0.3) !important;
 }
 
 /* Прозрачный фон на body и app */
@@ -37,63 +42,18 @@ body, .appMount__51fd7, .app__160d8 {
     background: transparent !important;
 }
 
-/* Отключаем надпись ClearVision */
-.info__2debe::after,
-.platform-win .leading_c38106::before,
-.platform-win .leading_c38106::after {
-    display: none !important;
-}
-
-/* НЕОНОВАЯ ОБВОДКА ВОКРУГ ИНТЕРФЕЙСА */
-.container-1eFT6L,
-.sidebar-2K8pFh,
-.chatContent-3KubbW,
-.membersWrap-3NUR2t,
-.content-1jQy2l,
-.nowPlayingColumn-1eCBCN,
-.container-YkUktl {
-    border: 2px solid rgba(255, 0, 128, 0.7); /* Неоновый розовый */
-    box-shadow: 0 0 10px rgba(255, 0, 128, 0.8), 0 0 20px rgba(255, 0, 128, 0.5);
-    border-radius: 8px;
-    backdrop-filter: blur(4px); /* Доп. стиль */
-}
-
-/* Неоновая обводка основных панелей Discord */
-[class*="container-"],
-[class*="sidebar-"],
-[class*="chatContent-"],
-[class*="membersWrap-"],
-[class*="content-"],
-[class*="nowPlayingColumn-"] {
-    border: 2px solid rgba(255, 0, 128, 0.7);
-    box-shadow: 0 0 8px rgba(255, 0, 128, 0.9), 0 0 16px rgba(255, 0, 128, 0.5);
-    border-radius: 8px;
-}
-
-[class*="container-"]:hover,
-[class*="sidebar-"]:hover,
-[class*="chatContent-"]:hover {
-    box-shadow: 0 0 15px rgba(255, 0, 128, 0.9), 0 0 25px rgba(255, 0, 128, 0.6);
-}
-
-/* Обводка вокруг всех ключевых блоков интерфейса */
-[class*="appMount"],
-[class*="layers-"],
-[class*="layer-"],
-[class*="standardSidebarView-"],
-[class*="contentRegion-"],
-[class*="panels-"],
-[class*="chat-"],
-[class*="container-"],
-[class*="sidebar-"],
-[class*="membersWrap-"],
-[class*="chatContent-"],
-[class*="title-"],
-[class*="toolbar-"],
-[class*="peopleColumn-"],
-[class*="nowPlayingColumn-"],
-[class*="scroller-"] {
-    border: 2px solid rgba(255, 0, 128, 0.6);
-    box-shadow: 0 0 10px rgba(255, 0, 128, 0.8), 0 0 20px rgba(255, 0, 128, 0.5);
-    border-radius: 10px;
+/* Надпись ClearVision сверху, как на Discord+ */
+.wordmark__421ed {
+    display: block;
+    content: "NNFon Neon";
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #b84fff;
+    text-shadow: 0 0 10px #b84fff;
+    z-index: 1000;
+    font-family: 'Russo One', sans-serif;
+    pointer-events: none;
 }
