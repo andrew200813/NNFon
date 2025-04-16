@@ -1,59 +1,52 @@
-/* Модифицированная версия ClearVision с кастомным фоном и неоновой обводкой */
+/*
+ * @name NNSOME SKILL Theme
+ * @author Adapted by ChatGPT
+ * @version 1.0.0
+ * @description Custom Discord theme with neon text and custom background
+ */
 
-@import url("https://clearvision.github.io/ClearVision-v7/main.css");
+@import url('https://plusinsta.github.io/discord-plus/src/i11n.css');
+@import url('https://plusinsta.github.io/discord-plus/src/DiscordPlus-extras.theme.css');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 :root {
-  --background-image: url("https://i.imgur.com/1vG1rE9.png");
-  --background-attachment: fixed;
-  --background-filter: none;
-  --hsl-main-color: 276 100% 65%; /* Неоновый фиолетовый */
-  --background-shading-percent: 0.0;
-  --hsl-background-shading: 0 0% 0%;
-  --hsl-card-shading: hsl(276 100% 7%);
-  --hsl-card-shading-inverted: hsl(276 100% 12%);
-  --hsl-popout-shading: hsl(276 100% 10%);
-  --hsl-hover-color: hsl(276 100% 75%);
-  --hsl-input-border-shading: hsl(276 100% 40%);
-  --hsl-success-color: hsl(140 100% 50%);
-  --hsl-danger-color: hsl(0 100% 60%);
-  --hsl-streaming-color: hsl(260 100% 60%);
+  --dplus-radius-ui: 10px;
+  --dplus-scrollbar-width: 8px;
+  --dplus-channels-width: 250px;
+  --dplus-blur-scale: 0.7;
+  --dplus-font-ui: 'Poppins', sans-serif;
+  --dplus-font-body: 'Poppins', sans-serif;
+  --dplus-font-header: 'Poppins', sans-serif;
+  --dplus-wordmark: url('https://chat.openai.com/_assets/1a9a366b39b58e98bbef7a9bc18d25c4a33c0f62/A_digital_graphic_design_showcases_the_words_%22NNSO.png');
 }
 
-/* НЕОНОВАЯ ОБВОДКА ВОКРУГ ИНТЕРФЕЙСА */
-[class*="container-"],
-[class*="sidebar-"],
-[class*="chatContent-"],
-[class*="membersWrap-"],
-[class*="content-"],
-[class*="nowPlayingColumn-"],
-[class*="layers-"],
-[class*="layer-"],
-[class*="appMount-"],
-[class*="app-"] {
-    border: 2px solid rgba(184, 79, 255, 0.7);
-    box-shadow: 0 0 10px rgba(184, 79, 255, 0.8);
-    border-radius: 10px;
-    backdrop-filter: blur(6px);
-    background: rgba(0, 0, 0, 0.3) !important;
+.theme-dark, .theme-light {
+  --dplus-backdrop: url(https://i.imgur.com/1vG1rE9.png);
+  --dplus-accent-color-hue: 320;
+  --dplus-accent-color-saturation: 100%;
+  --dplus-accent-color-lightness: 65%;
+  --dplus-accent-color-saturation-factor: 1;
+  --dplus-background-color-alpha: 0.8;
 }
 
-/* Прозрачный фон на body и app */
-body, .appMount__51fd7, .app__160d8 {
-    background: transparent !important;
+#app-mount {
+  background: var(--dplus-backdrop) !important;
+  background-size: cover !important;
+  background-position: center !important;
 }
 
-/* Надпись ClearVision сверху, как на Discord+ */
-.wordmark__421ed {
-    display: block;
-    content: "NNFon Neon";
-    position: absolute;
-    top: 10px;
-    left: 20px;
-    font-size: 20px;
-    font-weight: bold;
-    color: #b84fff;
-    text-shadow: 0 0 10px #b84fff;
-    z-index: 1000;
-    font-family: 'Russo One', sans-serif;
-    pointer-events: none;
+.wordmarkWindows-2dq6rw svg {
+  display: none !important;
+}
+
+.wordmarkWindows-2dq6rw::before {
+  content: '';
+  display: block;
+  width: 160px;
+  height: 40px;
+  background-image: var(--dplus-wordmark);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: 6px;
 }
