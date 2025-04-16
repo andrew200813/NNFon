@@ -43,3 +43,17 @@ body, .appMount__51fd7, .app__160d8 {
 .platform-win .leading_c38106::after {
     display: none !important;
 }
+
+/* НЕОНОВАЯ ОБВОДКА ВОКРУГ ИНТЕРФЕЙСА */
+.container-1eFT6L,
+.sidebar-2K8pFh,
+.chatContent-3KubbW,
+.membersWrap-3NUR2t,
+.content-1jQy2l,
+.nowPlayingColumn-1eCBCN,
+.container-YkUktl {
+    border: 2px solid rgba(255, 0, 128, 0.7); /* Неоновый розовый */
+    box-shadow: 0 0 10px rgba(255, 0, 128, 0.8), 0 0 20px rgba(255, 0, 128, 0.5);
+    border-radius: 8px;
+    backdrop-filter: blur(4px); /* Доп. стиль */
+}
