@@ -57,3 +57,21 @@ body, .appMount__51fd7, .app__160d8 {
     border-radius: 8px;
     backdrop-filter: blur(4px); /* Доп. стиль */
 }
+
+/* Неоновая обводка основных панелей Discord */
+[class*="container-"],
+[class*="sidebar-"],
+[class*="chatContent-"],
+[class*="membersWrap-"],
+[class*="content-"],
+[class*="nowPlayingColumn-"] {
+    border: 2px solid rgba(255, 0, 128, 0.7);
+    box-shadow: 0 0 8px rgba(255, 0, 128, 0.9), 0 0 16px rgba(255, 0, 128, 0.5);
+    border-radius: 8px;
+}
+
+[class*="container-"]:hover,
+[class*="sidebar-"]:hover,
+[class*="chatContent-"]:hover {
+    box-shadow: 0 0 15px rgba(255, 0, 128, 0.9), 0 0 25px rgba(255, 0, 128, 0.6);
+}
