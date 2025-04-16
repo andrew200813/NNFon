@@ -75,3 +75,25 @@ body, .appMount__51fd7, .app__160d8 {
 [class*="chatContent-"]:hover {
     box-shadow: 0 0 15px rgba(255, 0, 128, 0.9), 0 0 25px rgba(255, 0, 128, 0.6);
 }
+
+/* Обводка вокруг всех ключевых блоков интерфейса */
+[class*="appMount"],
+[class*="layers-"],
+[class*="layer-"],
+[class*="standardSidebarView-"],
+[class*="contentRegion-"],
+[class*="panels-"],
+[class*="chat-"],
+[class*="container-"],
+[class*="sidebar-"],
+[class*="membersWrap-"],
+[class*="chatContent-"],
+[class*="title-"],
+[class*="toolbar-"],
+[class*="peopleColumn-"],
+[class*="nowPlayingColumn-"],
+[class*="scroller-"] {
+    border: 2px solid rgba(255, 0, 128, 0.6);
+    box-shadow: 0 0 10px rgba(255, 0, 128, 0.8), 0 0 20px rgba(255, 0, 128, 0.5);
+    border-radius: 10px;
+}
